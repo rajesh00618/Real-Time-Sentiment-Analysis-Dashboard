@@ -39,7 +39,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 
 ```bash
 # Clone repository
-git clone <https://github.com/rajesh00618/setiment-platform>
+git clone https://github.com/rajesh00618/setiment-platform
 cd sentiment-platform
 
 # Copy environment template
