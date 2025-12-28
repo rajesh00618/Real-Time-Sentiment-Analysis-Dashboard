@@ -43,10 +43,12 @@ git clone https://github.com/rajesh00618/setiment-platform
 cd sentiment-platform
 
 # Copy environment template
-cp .env.example .env
+# On Windows: copy .env.example .env
+# On Unix/Linux/Mac: cp .env.example .env
 
 # Edit .env file with your API keys
-nano .env
+# On Windows: notepad .env
+# On Unix/Linux/Mac: nano .env
 
 # Start all services
 docker-compose up -d
