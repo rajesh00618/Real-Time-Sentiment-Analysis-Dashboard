@@ -26,7 +26,7 @@ class SentimentAnalyzer:
         if model_type == 'local':
             self.model_name = model_name or os.getenv(
                 "HUGGINGFACE_MODEL",
-                "distilbert-base-uncased-finetuned-sst-2-english"
+                "cardiffnlp/twitter-roberta-base-sentiment-latest"
             )
             self.emotion_model = os.getenv(
                 "EMOTION_MODEL",
@@ -92,10 +92,12 @@ class SentimentAnalyzer:
             score = float(result['score'])
             
             # Map labels to standard format
-            if 'POSITIVE' in label or 'POS' in label:
+            if 'POSITIVE' in label or 'POS' in label or 'LABEL_2' in label:
                 sentiment_label = "positive"
-            elif 'NEGATIVE' in label or 'NEG' in label:
+            elif 'NEGATIVE' in label or 'NEG' in label or 'LABEL_0' in label:
                 sentiment_label = "negative"
+            elif 'LABEL_1' in label:
+                sentiment_label = "neutral"
             else:
                 sentiment_label = "neutral"
             

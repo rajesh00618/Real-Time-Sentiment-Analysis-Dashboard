@@ -64,8 +64,7 @@ async def save_post_and_analysis(
             model_name=sentiment_result.get('model_name', 'unknown'),
             sentiment_label=sentiment_result.get('sentiment_label', 'neutral'),
             confidence_score=sentiment_result.get('confidence_score', 0.5),
-            emotion=emotion_result.get('emotion'),
-            analyzed_at=datetime.utcnow()
+            emotion=emotion_result.get('emotion')
         )
         
         db_session.add(analysis)
